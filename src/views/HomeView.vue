@@ -2,7 +2,7 @@
   
 </template>
 
-<script>
+<script setup>
 const home = "Home"
 </script>
 

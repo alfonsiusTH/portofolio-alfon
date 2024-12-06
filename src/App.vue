@@ -2,7 +2,7 @@
   
 </template>
 
-<script>
+<script setup>
 const app = "App"
 </script>
 
