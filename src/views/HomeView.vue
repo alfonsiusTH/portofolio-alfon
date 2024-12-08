@@ -1,9 +1,12 @@
 <template>
-  
+  <NavigationBar/>
 </template>
 
 <script setup>
-const home = "Home"
+// Import
+import NavigationBar from '@/components/NavigationBar.vue';
+
+const home = "home"
 </script>
 
 <style>
