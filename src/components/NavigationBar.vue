@@ -110,7 +110,7 @@ onMounted(() => {
 
 <style scoped>
 .navbar {
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.9);
   padding: 1rem 2%;
   position: fixed;
   top: 0;
@@ -189,9 +189,12 @@ onMounted(() => {
 .mobile-outter {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  height: 100vh;
-  padding: 0.5rem;
+  align-items: center;
+  width: 100%;
+  padding: 0.4rem 3%;
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
 }
 
 .mobile-conatiner {
@@ -199,7 +202,7 @@ onMounted(() => {
   justify-content: space-between;
   width: 100%;
   border-radius: 1rem;
-  padding: 1rem;
+  padding: 0.86rem;
   font-size: 5vw;
   background-color: #1c1c1c;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
@@ -282,6 +285,9 @@ onMounted(() => {
 @media (max-width: 768px) {
   .navbar {
     display: none;
+  }
+  .mobile-conatiner {
+    display: flex;
   }
 }
 
