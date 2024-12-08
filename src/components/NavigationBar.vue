@@ -4,14 +4,14 @@
       <a href="#" class="logo navbar-brand" ref="navbarBrand">Alfonsius Tolan Hera</a>
       <div class="desktop-menu">
         <ul class="navbar-menu">
-          <li class="nav-item" ref="navbarItem1">
-            <a href="#" class="text-decoration-none text-black">Home</a>
-          </li>
-          <li class="nav-item" ref="navbarItem2">
-            <a href="about" class="text-decoration-none text-black">About Me</a>
-          </li>
-          <li class="nav-item" ref="navbarItem3">
-            <a href="project" class="text-decoration-none text-black">Project</a>
+          <li v-for="item in menu" class="nav-item" :key="item.name">
+            <a
+              class="text-decoration-none nav-link"
+              :ref="item.ref"
+              :href="item.href"
+              @click="scrollToSection(item.href)"
+              >{{ item.name }}</a
+            >
           </li>
           <a class="btn contact-btn" ref="buttonContact" href="https://wa.me/6289630417337"
             >Contact</a
@@ -26,13 +26,15 @@
   <div class="d-block d-md-none">
     <div class="mobile-outter">
       <div class="mobile-conatiner">
-        <a href="#" class="text-decoration-none item-button"><i class="bi bi-house"></i></a>
-
-        <a href="about" class="text-decoration-none item-button"><i class="bi bi-person"></i></a>
-
-        <a href="project" class="text-decoration-none item-button"
-          ><i class="bi bi-briefcase"></i
-        ></a>
+        <a
+          v-for="item in menu"
+          class="text-decoration-none item-button"
+          :key="item.name"
+          :href="item.href"
+          @click="scrollToSection(item.href)"
+        >
+        <i v-html="item.i"></i>
+      </a>
 
         <a href="https://wa.me/6289630417337" class="text-decoration-none item-button"
           ><i class="bi bi-whatsapp"></i
@@ -53,8 +55,24 @@ const navbarBrand = ref(null)
 const navbarItem1 = ref(null)
 const navbarItem2 = ref(null)
 const navbarItem3 = ref(null)
+const navbarItem4 = ref(null)
 const buttonContact = ref(null)
-const hamburgerButton = ref(null)
+
+const menu = ref([
+  { name: 'Home', href: '#home', ref: 'navbarItem1', i: '<i class="bi bi-house-door-fill"></i>' },
+  { name: 'About', href: '#about', ref: 'navbarItem2', i: '<i class="bi bi-person-fill"></i>' },
+  { name: 'Skill', href: '#skill', ref: 'navbarItem3', i: '<i class="bi bi-code-slash"></i>' },
+  { name: 'Project', href: '#project', ref: 'navbarItem4', i: '<i class="bi bi-collection"></i>' },
+])
+
+const scrollToSection = (href) => {
+  const section = document.querySelector(href)
+  if (section) {
+    section.scrollIntoView({
+      behavior: 'smooth',
+    })
+  }
+}
 
 onMounted(() => {
   gsap.from(navbarContainer.value, {
@@ -103,6 +121,14 @@ onMounted(() => {
     duration: 1,
     x: -30,
     delay: 0.9,
+    ease: 'power3.out',
+  })
+
+  gsap.from(navbarItem4.value, {
+    opacity: 0,
+    duration: 1,
+    x: -30,
+    delay: 1,
     ease: 'power3.out',
   })
 })
@@ -167,7 +193,7 @@ onMounted(() => {
   left: 0;
 }
 
-.nav-item:active {
+.nav-item .nav-link:active {
   font-weight: 700;
 }
 

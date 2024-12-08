@@ -72,7 +72,7 @@ onMounted(() => {
   align-items: center;
   border-radius: 10px;
   overflow: hidden;
-  width: 500px;
+  width: 450px;
   height: 300px;
   position: relative;
 }
@@ -147,14 +147,17 @@ onMounted(() => {
     margin: 0;
     padding: 0;
   }
+
   .hero-container {
     margin-top: 0;
     flex-direction: column;
+    gap: 3rem;
   }
 
   .image-container {
     width: 60%;
     height: 230px;
+    padding-right: 3px;
   }
 
   .image-container::after {
