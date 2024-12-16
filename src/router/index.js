@@ -10,6 +10,24 @@ const router = createRouter({
       component: HomeView,
     },
   ],
+
+  scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      const section = document.querySelector(to.hash)
+      if (section) {
+        return {
+          el: to.hash,
+          behavior: 'smooth',
+        }
+      }
+      return {top: 0}
+    }
+  }
 })
 
+router.afterEach((to, from) => {
+  if (to.hash) {
+    history.replaceState(null, null, " ")
+  }
+})
 export default router
