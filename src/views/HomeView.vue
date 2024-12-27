@@ -18,15 +18,12 @@
         </p>
       </div>
     </div>
-    <section
-      id="about"
-      class="about-container container d-flex flex-column justify-content-center align-items-center"
-    >
+    <section id="about" class="about-container container">
       <div class="section-header">
         <h2>About Me</h2>
       </div>
-      <div class="section-container d-flex flex-column w-100">
-        <div class="description-wrapper d-flex w-100">
+      <div class="section-container">
+        <div class="description-wrapper-1">
           <div class="section-description-1">
             <p>
               I'm from Tangerang, Indonesia. I'm currently studying at SMKN 4 Tangerang. During the
@@ -37,32 +34,49 @@
               the future, especially in the field of frontend developers.
             </p>
           </div>
-          <div class="section-description-2">
-            <ul>
-              <li>
-                SMKN 4 Tangerang
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate similique
-                  velit quia earum accusamus quo eaque illum cum quasi quidem quam consequuntur,
-                  eligendi ab suscipit. Id cupiditate nam suscipit beatae! Lorem ipsum dolor sit
-                  amet, consectetur adipisicing elit. Vitae quis beatae exercitationem obcaecati
-                  cupiditate officia veniam esse unde soluta. Neque pariatur cum deleniti, sequi sit
-                  velit nemo dolore ipsa quas. Lorem ipsum dolor sit amet consectetur
-                </p>
-              </li>
-              <li>
-                SMP Santa Maria 2
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptate, error
-                  deserunt ipsam soluta maxime. Voluptas placeat, ipsa totam suscipit corrupti
-                  obcaecati animi enim ipsam debitis ex incidunt quam accusamus. Lorem ipsum dolor
-                  sit amet, consectetur adipisicing elit. Ipsa aperiam quisquam deserunt ab possimus
-                  explicabo numquam quae temporibus culpa maiores? Porro doloribus beatae dolorem
-                  sequi inventore laudantium cum voluptatem nesciunt.
-                </p>
-              </li>
-            </ul>
+        </div>
+        <div class="description-wrapper">
+          <div class="section-description-2" ref="description2">
+            <strong>PT. Wellmagic Media Digital</strong>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quidem ipsam distinctio
+              quod dolorem, voluptatibus officia ut provident earum facilis iure voluptatem tempore
+              dolores vitae quos doloribus. Laboriosam, accusamus atque.
+            </p>
+            <strong>SMKN 4 Tangerang</strong>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate similique velit
+              quia earum accusamus quo eaque illum cum quasi quidem quam consequuntur, eligendi ab
+              suscipit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum soluta impedit
+              nostrum quisquam accusantium similique ea autem, vero repudiandae, consequuntur dolor!
+              Modi tempora eos assumenda, perferendis porro placeat laborum aperiam!
+            </p>
           </div>
+        </div>
+        <button v-if="!loadMore" class="btn btn-mobile d-md-none" @click="toggleDescription">
+          <span>See More About Me!</span>
+        </button>
+        <div v-if="loadMore" class="section-description-2-mobile">
+          <ul>
+            <li>
+              <strong>PT. Wellmagic Media Digital</strong>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quo accusamus
+                consequatur quasi inventore porro, eaque deserunt a. Voluptatibus veritatis eaque
+                debitis distinctio inventore similique repellat molestiae temporibus asperiores
+                pariatur!
+              </p>
+            </li>
+            <li>
+              <strong>SMKN 4 Kota Tangerang</strong>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis error accusantium
+                rerum aliquid tempora atque illum delectus? Quia blanditiis veniam tempora molestias
+                minus ut, id magnam quasi perferendis itaque aliquam?
+              </p>
+            </li>
+          </ul>
+          <button class="btn btn-mobile" @click="toggleDescription"><span>Close</span></button>
         </div>
       </div>
     </section>
@@ -80,6 +94,14 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const imageContainer = ref(null)
+const loadMore = ref(false)
+
+function toggleDescription() {
+  loadMore.value = !loadMore.value
+
+  // const description2Mobile = document.querySelector('.section-description-2-mobile')
+
+}
 
 onMounted(() => {
   const role = {
@@ -213,7 +235,7 @@ onMounted(() => {
   position: absolute;
   width: 500px;
   height: 500px;
-  background-image: conic-gradient(from 180deg, transparent, transparent, #000000);
+  background-image: conic-gradient(from 180deg, transparent, transparent);
   animation: rotate 4s linear infinite;
   animation-delay: -2s;
 }
@@ -275,6 +297,21 @@ onMounted(() => {
   text-align: justify;
 }
 
+.section-container {
+  display: flex;
+  width: 100%;
+}
+
+.description-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.description-wrapper-1 {
+  display: flex;
+  width: 100%;
+}
+
 .section-description-1 {
   text-align: justify;
   font-size: 15px;
@@ -286,6 +323,82 @@ onMounted(() => {
   text-align: justify;
   font-size: 15px;
   padding-left: 1rem;
+}
+
+.section-description-2-mobile {
+  padding-top: 1rem;
+  text-align: justify;
+  font-size: 15px;
+}
+
+.section-description-2-mobile ul {
+  list-style-image: linear-gradient(to left bottom, red, blue);
+}
+
+.btn-mobile {
+  width: 100%;
+  max-width: 190px;
+  height: 100%;
+  border-radius: 15px;
+  max-height: 200px;
+  padding: 1rem;
+  margin: 10px auto;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  will-change: transform;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(135deg, #1a237e, #4a148c, #0d47a1, #000000);
+}
+
+.btn-mobile::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-image: conic-gradient(
+    from 180deg,
+    transparent,
+    transparent,
+    #1a237e,
+    #4a148c,
+    #0d47a1
+  );
+  animation: rotate 4s linear infinite;
+  animation-delay: -2s;
+}
+
+.btn-mobile::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-image: conic-gradient(
+    from 180deg,
+    transparent,
+    transparent,
+    #1a237e,
+    #4a148c,
+    #0d47a1
+  );
+  animation: rotate 4s linear infinite;
+}
+
+.btn-mobile span {
+  position: absolute;
+  inset: 5px;
+  background: white;
+  color: #4a148c;
+  border-radius: 10px;
+  z-index: 1;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn-mobile span:hover {
+  background: linear-gradient(135deg, #1a237e, #4a148c, #0d47a1);
+  color: white;
 }
 
 .section-header {
@@ -348,12 +461,13 @@ onMounted(() => {
   }
 
   .section-container {
+    display: flex;
+    flex-direction: column;
     padding: 1rem;
   }
 
   .description-wrapper {
-    display: flex;
-    flex-direction: column;
+    display: none;
     width: 100%;
   }
 
@@ -363,16 +477,13 @@ onMounted(() => {
 
   .section-description-1 {
     border-right: none;
-    border-bottom: 2px solid black;
     padding-right: 0;
-    padding-bottom: 1rem;
     margin-right: 10px;
     margin-left: 10px;
   }
 
   .section-description-2 {
     padding-left: 0;
-    padding-top: 2rem;
   }
 }
 </style>
