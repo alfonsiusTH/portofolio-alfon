@@ -53,31 +53,33 @@
             </p>
           </div>
         </div>
-        <button v-if="!loadMore" class="btn btn-mobile d-md-none" @click="toggleDescription">
-          <span>See More About Me!</span>
+        <button class="btn btn-mobile d-md-none" @click="toggleDescription">
+          <span v-if="!loadMore">See More About Me!</span>
+          <span v-else> Close</span>
         </button>
-        <div v-if="loadMore" class="section-description-2-mobile">
-          <ul>
-            <li>
-              <strong>PT. Wellmagic Media Digital</strong>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quo accusamus
-                consequatur quasi inventore porro, eaque deserunt a. Voluptatibus veritatis eaque
-                debitis distinctio inventore similique repellat molestiae temporibus asperiores
-                pariatur!
-              </p>
-            </li>
-            <li>
-              <strong>SMKN 4 Kota Tangerang</strong>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis error accusantium
-                rerum aliquid tempora atque illum delectus? Quia blanditiis veniam tempora molestias
-                minus ut, id magnam quasi perferendis itaque aliquam?
-              </p>
-            </li>
-          </ul>
-          <button class="btn btn-mobile" @click="toggleDescription"><span>Close</span></button>
-        </div>
+        <transition @enter="enterAnimation" @leave="leaveAnimation">
+          <div v-show="loadMore" class="section-description-2-mobile">
+            <ul>
+              <li>
+                <strong>PT. Wellmagic Media Digital</strong>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quo accusamus
+                  consequatur quasi inventore porro, eaque deserunt a. Voluptatibus veritatis eaque
+                  debitis distinctio inventore similique repellat molestiae temporibus asperiores
+                  pariatur!
+                </p>
+              </li>
+              <li>
+                <strong>SMKN 4 Kota Tangerang</strong>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis error accusantium
+                  rerum aliquid tempora atque illum delectus? Quia blanditiis veniam tempora
+                  molestias minus ut, id magnam quasi perferendis itaque aliquam?
+                </p>
+              </li>
+            </ul>
+          </div>
+        </transition>
       </div>
     </section>
   </div>
@@ -98,9 +100,22 @@ const loadMore = ref(false)
 
 function toggleDescription() {
   loadMore.value = !loadMore.value
+}
 
-  // const description2Mobile = document.querySelector('.section-description-2-mobile')
+function enterAnimation(el, done) {
+  gsap.fromTo(
+    el,
+    { opacity: 0, y: -20 },
+    { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out', onComplete: done }
+  );
+}
 
+function leaveAnimation(el, done) {
+  gsap.fromTo(
+    el,
+    { opacity: 1, y: 0 },
+    { opacity: 0, y: -20, duration: 0.5, ease: 'power3.in', onComplete: done }
+  )
 }
 
 onMounted(() => {
@@ -327,6 +342,8 @@ onMounted(() => {
 
 .section-description-2-mobile {
   padding-top: 1rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
   text-align: justify;
   font-size: 15px;
 }
