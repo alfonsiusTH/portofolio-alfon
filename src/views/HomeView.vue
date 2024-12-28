@@ -2,86 +2,126 @@
   <div class="home" id="home">
     <NavigationBar />
     <div class="hero-container">
-      <div class="image-container" ref="imageContainer">
-        <img src="../assets/images/hero.png" alt="Alfonsius Tolan Hera" class="hero-image" />
-        <span></span>
-      </div>
-      <div class="hero-text">
-        <h4>Hello! I'm Alfonsius Tolan Hera</h4>
-        <span id="typewriter">
-          <span>I'm a </span><span id="typed-text"></span><span class="typed-cursor"></span>
-        </span>
-        <p>
-          Hello! My Name is Alfonsius Tolan Hera. I'm a software engineer student and frontend
-          developer. I have a passion for programming and I'm always looking for new challenges to
-          improve my skills.
-        </p>
+      <div class="hero-outter">
+        <div class="image-container" ref="imageContainer">
+          <img src="../assets/images/hero.png" alt="Alfonsius Tolan Hera" class="hero-image" />
+          <span></span>
+        </div>
+        <div class="hero-text">
+          <h4>Hello! I'm Alfonsius Tolan Hera</h4>
+          <span id="typewriter">
+            <span>I'm a </span><span id="typed-text"></span><span class="typed-cursor"></span>
+          </span>
+          <p>
+            Hello! My Name is Alfonsius Tolan Hera. I'm a software engineer student and frontend
+            developer. I have a passion for programming and I'm always looking for new challenges to
+            improve my skills.
+          </p>
+        </div>
       </div>
     </div>
-    <section id="about" class="about-container container">
-      <div class="section-header">
-        <h2>About Me</h2>
-      </div>
-      <div class="section-container">
-        <div class="description-wrapper-1">
-          <div class="section-description-1">
-            <p>
-              I'm from Tangerang, Indonesia. I'm currently studying at SMKN 4 Tangerang. During the
-              3 years of schooling, i have learned a lot about programming and web development.
-              Based on that period of time, I felt that I liked web development. And during my
-              internship from school, I got quite a lot of tasks related to web development. That's
-              when I realized that web development is my passion. I want to be a web developer in
-              the future, especially in the field of frontend developers.
-            </p>
+    <div id="about" class="">
+      <section class="about-container container">
+        <div class="section-header">
+          <h2>About Me</h2>
+        </div>
+        <div class="section-container">
+          <div class="description-wrapper-1">
+            <div class="section-description-1">
+              <p>
+                I'm from Tangerang, Indonesia. I'm currently studying at SMKN 4 Tangerang. During
+                the 3 years of schooling, i have learned a lot about programming and web
+                development. Based on that period of time, I felt that I liked web development. And
+                during my internship from school, I got quite a lot of tasks related to web
+                development. That's when I realized that web development is my passion. I want to be
+                a web developer in the future, especially in the field of frontend developers.
+              </p>
+            </div>
+          </div>
+          <div class="description-wrapper">
+            <div class="section-description-2" ref="description2">
+              <strong>PT. Wellmagic Media Digital</strong>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quidem ipsam
+                distinctio quod dolorem, voluptatibus officia ut provident earum facilis iure
+                voluptatem tempore dolores vitae quos doloribus. Laboriosam, accusamus atque.
+              </p>
+              <strong>SMKN 4 Tangerang</strong>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate similique velit
+                quia earum accusamus quo eaque illum cum quasi quidem quam consequuntur, eligendi ab
+                suscipit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum soluta
+                impedit nostrum quisquam accusantium similique ea autem, vero repudiandae,
+                consequuntur dolor! Modi tempora eos assumenda, perferendis porro placeat laborum
+                aperiam!
+              </p>
+            </div>
+          </div>
+          <button class="btn btn-mobile d-md-none" @click="toggleDescription">
+            <span v-if="!loadMore">See More About Me!</span>
+            <span v-else> Close</span>
+          </button>
+          <transition @enter="enterAnimation" @leave="leaveAnimation">
+            <div v-show="loadMore" class="section-description-2-mobile">
+              <ul>
+                <li>
+                  <strong>PT. Wellmagic Media Digital</strong>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quo
+                    accusamus consequatur quasi inventore porro, eaque deserunt a. Voluptatibus
+                    veritatis eaque debitis distinctio inventore similique repellat molestiae
+                    temporibus asperiores pariatur!
+                  </p>
+                </li>
+                <li>
+                  <strong>SMKN 4 Kota Tangerang</strong>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis error accusantium
+                    rerum aliquid tempora atque illum delectus? Quia blanditiis veniam tempora
+                    molestias minus ut, id magnam quasi perferendis itaque aliquam?
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </transition>
+        </div>
+      </section>
+    </div>
+    <div id="skill" class="">
+      <section class="outer-skill-container container">
+        <div class="skill-container">
+          <div class="skill-header">
+            <h2>My Skills</h2>
+          </div>
+          <div class="skill-item-container">
+            <div class="skill-item">
+              <img src="../assets/images/html.png" alt="html" />
+              <p>HTML</p>
+            </div>
+            <div class="skill-item">
+              <img src="../assets/images/css.jpg" alt="css" />
+              <p>CSS</p>
+            </div>
+            <div class="skill-item">
+              <img src="../assets/images/javascript.jpg" alt="javascript" />
+              <p>JavaScript</p>
+            </div>
+            <div class="skill-item">
+              <img src="../assets/images/github.png" alt="git" />
+              <p>Github</p>
+            </div>
+            <div class="skill-item">
+              <img src="../assets/images/vuejs.png" alt="git" />
+              <p>Vue Js</p>
+            </div>
+            <div class="skill-item">
+              <img src="../assets/images/bootstrap.png" alt="git" />
+              <p>Bootstrap</p>
+            </div>
           </div>
         </div>
-        <div class="description-wrapper">
-          <div class="section-description-2" ref="description2">
-            <strong>PT. Wellmagic Media Digital</strong>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quidem ipsam distinctio
-              quod dolorem, voluptatibus officia ut provident earum facilis iure voluptatem tempore
-              dolores vitae quos doloribus. Laboriosam, accusamus atque.
-            </p>
-            <strong>SMKN 4 Tangerang</strong>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate similique velit
-              quia earum accusamus quo eaque illum cum quasi quidem quam consequuntur, eligendi ab
-              suscipit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum soluta impedit
-              nostrum quisquam accusantium similique ea autem, vero repudiandae, consequuntur dolor!
-              Modi tempora eos assumenda, perferendis porro placeat laborum aperiam!
-            </p>
-          </div>
-        </div>
-        <button class="btn btn-mobile d-md-none" @click="toggleDescription">
-          <span v-if="!loadMore">See More About Me!</span>
-          <span v-else> Close</span>
-        </button>
-        <transition @enter="enterAnimation" @leave="leaveAnimation">
-          <div v-show="loadMore" class="section-description-2-mobile">
-            <ul>
-              <li>
-                <strong>PT. Wellmagic Media Digital</strong>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quo accusamus
-                  consequatur quasi inventore porro, eaque deserunt a. Voluptatibus veritatis eaque
-                  debitis distinctio inventore similique repellat molestiae temporibus asperiores
-                  pariatur!
-                </p>
-              </li>
-              <li>
-                <strong>SMKN 4 Kota Tangerang</strong>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis error accusantium
-                  rerum aliquid tempora atque illum delectus? Quia blanditiis veniam tempora
-                  molestias minus ut, id magnam quasi perferendis itaque aliquam?
-                </p>
-              </li>
-            </ul>
-          </div>
-        </transition>
-      </div>
-    </section>
+      </section>
+    </div>
   </div>
 </template>
 
@@ -175,6 +215,28 @@ onMounted(() => {
     },
   })
 
+  gsap.from('.skill-header', {
+    opacity: 0,
+    smoothOrigin: true,
+    y: -50,
+    duration: 1,
+    scrollTrigger: {
+      trigger: '.skill-header',
+      start: 'top 95%',
+    },
+  })
+
+  gsap.from('.skill-item-container', {
+    opacity: 0,
+    scale: 0.8,
+    duration: 1,
+    smoothOrigin: true,
+    scrollTrigger: {
+      trigger: '.skill-item-container',
+      start: 'top 95%',
+    },
+  })
+
   const mouseMoveHandler = (e) => {
     const { clientX, clientY } = e
     const container = imageContainer.value
@@ -222,15 +284,17 @@ onMounted(() => {
 }
 
 .hero-container {
+  overflow: hidden;
+  padding: 1rem 6%;
+  margin-top: 1.5rem;
+}
+
+.hero-outter {
+  padding: 3.5rem;
   display: flex;
   align-items: center;
-  padding: 1.8rem;
-  margin-top: 1.5rem;
-  gap: 5rem;
-  padding-bottom: 5rem;
   border-bottom: 1px solid black;
-  overflow: hidden;
-  margin: 1.2rem 5%;
+  gap: 5rem;
 }
 
 .image-container {
@@ -312,6 +376,11 @@ onMounted(() => {
   text-align: justify;
 }
 
+.about-container {
+  border-bottom: 1px solid black;
+  padding: 1rem 2% 5rem 2%;
+}
+
 .section-container {
   display: flex;
   width: 100%;
@@ -367,7 +436,7 @@ onMounted(() => {
   align-items: center;
   will-change: transform;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  background: linear-gradient(135deg, #1a237e, #2390e3, #0d47a1, #ffffff);
+  background: linear-gradient(135deg, #1a237e, #2390e3, #0d47a1, #146ef6);
 }
 
 .btn-mobile::after {
@@ -422,8 +491,74 @@ onMounted(() => {
 
 .section-header {
   margin-top: 3rem;
+  margin-bottom: 3em;
+  text-align: center;
+}
+
+.skill-header {
+  margin-top: 3rem;
   margin-bottom: 3rem;
   text-align: center;
+}
+
+.outer-skill-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid black;
+}
+
+.skill-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 950px;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.skill-item-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  gap: 1.5rem;
+  font-weight: bold;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 240px;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 2rem;
+  gap: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.skill-item:nth-child(odd):hover {
+  transform: perspective(500px) rotateY(20deg) rotateX(10deg);
+  cursor: pointer;
+}
+
+.skill-item:nth-child(even):hover {
+  transform: perspective(500px) rotateY(-20deg) rotateX(10deg);
+  cursor: pointer;
+}
+
+.skill-item img {
+  width: 136px;
+  height: 136px;
+  object-fit: contain;
 }
 
 @media (max-width: 768px) {
@@ -434,12 +569,21 @@ onMounted(() => {
 
   .hero-container {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    padding: 0.5rem 4%;
+    width: 400px;
+    gap: 2rem;
+  }
+
+  .hero-outter {
+    display: flex;
+    flex-direction: column;
+    padding: 0.7rem;
     border-bottom: 2px solid black;
-    padding: 1rem 2%;
+    width: 100%;
+    align-items: center;
     gap: 3rem;
-    word-break: break-all;
   }
 
   .image-container {
@@ -474,9 +618,22 @@ onMounted(() => {
     font-size: 0.9rem;
   }
 
+  #about {
+    padding: 0.5rem 4%;
+  }
+
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 2px solid black;
+    padding: 1rem 2%;
+  }
+
   .section-header {
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-bottom: 1rem;
+    font-size: 1.5rem;
   }
 
   .section-container {
@@ -490,10 +647,6 @@ onMounted(() => {
     width: 100%;
   }
 
-  .section-header h2 {
-    font-size: 1.5rem;
-  }
-
   .section-description-1 {
     border-right: none;
     padding-right: 0;
@@ -503,6 +656,54 @@ onMounted(() => {
 
   .section-description-2 {
     padding-left: 0;
+  }
+
+  #skill {
+    display: flex;
+    padding: 0.5rem 4%;
+  }
+
+  .skill-header {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .outer-skill-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 1rem 2%;
+    border-bottom: 2px solid black;
+  }
+
+  .skill-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .skill-item-container {
+    text-align: center;
+    width: 400px;
+    padding: 2rem;
+    gap: 1.5rem;
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+
+  .skill-item {
+    width: 90px;
+    padding: 1rem;
+    height: 105px;
+  }
+
+  .skill-item img {
+    width: 40px;
+    height: 40px;
   }
 }
 </style>
