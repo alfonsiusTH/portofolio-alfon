@@ -106,15 +106,15 @@ function enterAnimation(el, done) {
   gsap.fromTo(
     el,
     { opacity: 0, y: -20 },
-    { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out', onComplete: done }
-  );
+    { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out', onComplete: done },
+  )
 }
 
 function leaveAnimation(el, done) {
   gsap.fromTo(
     el,
     { opacity: 1, y: 0 },
-    { opacity: 0, y: -20, duration: 0.5, ease: 'power3.in', onComplete: done }
+    { opacity: 0, y: -20, duration: 0.5, ease: 'power3.in', onComplete: done },
   )
 }
 
@@ -367,7 +367,7 @@ onMounted(() => {
   align-items: center;
   will-change: transform;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  background: linear-gradient(135deg, #1a237e, #4a148c, #0d47a1, #000000);
+  background: linear-gradient(135deg, #1a237e, #2390e3, #0d47a1, #ffffff);
 }
 
 .btn-mobile::after {
@@ -380,8 +380,9 @@ onMounted(() => {
     transparent,
     transparent,
     #1a237e,
-    #4a148c,
-    #0d47a1
+    #2390e3,
+    #0d47a1,
+    #ffffff
   );
   animation: rotate 4s linear infinite;
   animation-delay: -2s;
@@ -397,8 +398,9 @@ onMounted(() => {
     transparent,
     transparent,
     #1a237e,
-    #4a148c,
-    #0d47a1
+    #2390e3,
+    #0d47a1,
+    #ffffff
   );
   animation: rotate 4s linear infinite;
 }
@@ -407,14 +409,14 @@ onMounted(() => {
   position: absolute;
   inset: 5px;
   background: white;
-  color: #4a148c;
+  color: #00589b;
   border-radius: 10px;
   z-index: 1;
   transition: all 0.4s ease-in-out;
 }
 
 .btn-mobile span:hover {
-  background: linear-gradient(135deg, #1a237e, #4a148c, #0d47a1);
+  background: linear-gradient(135deg, #1a237e, #2390e3, #0d47a1);
   color: white;
 }
 
