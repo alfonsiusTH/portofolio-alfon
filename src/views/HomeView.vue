@@ -13,9 +13,8 @@
             <span>I'm a </span><span id="typed-text"></span><span class="typed-cursor"></span>
           </span>
           <p>
-            Hello! My Name is Alfonsius Tolan Hera. I'm a software engineer student and frontend
-            developer. I have a passion for programming and I'm always looking for new challenges to
-            improve my skills.
+            I'm a software engineer student and frontend developer. I have a passion for programming
+            and I'm always looking for new challenges to improve my skills.
           </p>
         </div>
       </div>
@@ -23,7 +22,7 @@
     <div id="about" class="">
       <section class="about-container container">
         <div class="section-header">
-          <h2>About Me</h2>
+          <h2><i class="bi bi-dash"></i> About Me</h2>
         </div>
         <div class="section-container">
           <div class="description-wrapper-1">
@@ -42,18 +41,19 @@
             <div class="section-description-2" ref="description2">
               <strong>PT. Wellmagic Media Digital</strong>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quidem ipsam
-                distinctio quod dolorem, voluptatibus officia ut provident earum facilis iure
-                voluptatem tempore dolores vitae quos doloribus. Laboriosam, accusamus atque.
+                PT. Wellmagic Media Digital is a company in the field of technology, especially in
+                the fields of <i>Software & Web Development</i>, <i>SaaS Product Solution</i>,
+                <i>AI & Data Solution</i>, <i>Multimedia & AR/VR Development</i>. I have experience
+                here as an intern in the <i>Web Development</i> section, in this section I am a
+                <i>Frontend Developer</i>.
               </p>
               <strong>SMKN 4 Tangerang</strong>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate similique velit
-                quia earum accusamus quo eaque illum cum quasi quidem quam consequuntur, eligendi ab
-                suscipit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum soluta
-                impedit nostrum quisquam accusantium similique ea autem, vero repudiandae,
-                consequuntur dolor! Modi tempora eos assumenda, perferendis porro placeat laborum
-                aperiam!
+                SMK Negeri 4 Kota Tangerang is a vocational high school specializing in engineering.
+                I have been studying here since 3 years ago, now I am in grade 12, and I am majoring
+                in Software Engineering. During my time here, I have gained a lot of experience,
+                especially during the vocational practice activities and internship period, thanks
+                to which I began to find my direction and purpose of what I want to do.
               </p>
             </div>
           </div>
@@ -67,18 +67,23 @@
                 <li>
                   <strong>PT. Wellmagic Media Digital</strong>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quo
-                    accusamus consequatur quasi inventore porro, eaque deserunt a. Voluptatibus
-                    veritatis eaque debitis distinctio inventore similique repellat molestiae
-                    temporibus asperiores pariatur!
+                    PT. Wellmagic Media Digital is a company in the field of technology, especially
+                    in the fields of <i>Software & Web Development</i>,
+                    <i>SaaS Product Solution</i>, <i>AI & Data Solution</i>,
+                    <i>Multimedia & AR/VR Development</i>. I have experience here as an intern in
+                    the <i>Web Development</i> section, in this section I am a
+                    <i>Frontend Developer</i>.
                   </p>
                 </li>
                 <li>
                   <strong>SMKN 4 Kota Tangerang</strong>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis error accusantium
-                    rerum aliquid tempora atque illum delectus? Quia blanditiis veniam tempora
-                    molestias minus ut, id magnam quasi perferendis itaque aliquam?
+                    SMK Negeri 4 Kota Tangerang is a vocational high school specializing in
+                    engineering. I have been studying here since 3 years ago, now I am in grade 12,
+                    and I am majoring in Software Engineering. During my time here, I have gained a
+                    lot of experience, especially during the vocational practice activities and
+                    internship period, thanks to which I began to find my direction and purpose of
+                    what I want to do.
                   </p>
                 </li>
               </ul>
@@ -88,35 +93,83 @@
       </section>
     </div>
     <div id="skill" class="">
-      <section class="outer-skill-container container">
+      <section class="outer-skill-container container w-100">
         <div class="skill-container">
-          <div class="skill-header">
-            <h2>My Skills</h2>
+          <div class="section-header">
+            <h2><i class="bi bi-dash"></i> Skills</h2>
           </div>
           <div class="skill-item-container">
-            <div class="skill-item">
+            <div class="skill-item" ref="skillItem">
               <img src="../assets/images/html.png" alt="html" />
               <p>HTML</p>
             </div>
-            <div class="skill-item">
+            <div class="skill-item" ref="skillItem1">
               <img src="../assets/images/css.jpg" alt="css" />
               <p>CSS</p>
             </div>
-            <div class="skill-item">
+            <div class="skill-item" ref="skillItem2">
               <img src="../assets/images/javascript.jpg" alt="javascript" />
               <p>JavaScript</p>
             </div>
-            <div class="skill-item">
+            <div class="skill-item" ref="skillItem3">
               <img src="../assets/images/github.png" alt="git" />
               <p>Github</p>
             </div>
-            <div class="skill-item">
+            <div class="skill-item" ref="skillItem4">
               <img src="../assets/images/vuejs.png" alt="git" />
               <p>Vue Js</p>
             </div>
-            <div class="skill-item">
+            <div class="skill-item" ref="skillItem5">
               <img src="../assets/images/bootstrap.png" alt="git" />
               <p>Bootstrap</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div id="project">
+      <section class="outer-project-container container w-100">
+        <div class="project-container">
+          <div class="section-header">
+            <h2><i class="bi bi-dash"></i> Projects</h2>
+          </div>
+          <div class="project-item-container">
+            <div class="card" ref="card1">
+              <div class="card-image">
+                <img src="../assets/images/Monitoring Apps.png" alt="Monitoring Apps" />
+                <div class="overlay">
+                  <span class="mb-2">Monitoring Apps - Frontend</span>
+                  <div class="tech-logo d-flex gap-2">
+                    <img src="../assets/images/vuejs-black-white.png" alt="" />
+                    <img src="../assets/images/bootstrap-black-white.png" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card" ref="card2">
+              <div class="card-image">
+                <img src="../assets/images/Article.png" alt="Article Apps" />
+                <div class="overlay">
+                  <span class="mb-2">Article Apps</span>
+                  <div class="tech-logo d-flex">
+                    <img src="../assets/images/vuejs-black-white.png" alt="" />
+                    <img src="../assets/images/bootstrap-black-white.png" alt="" />
+                    <img src="../assets/images/laravel.png" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card" ref="card3">
+              <div class="card-image">
+                <img src="../assets/images/Material.png" alt="Material Apps" />
+                <div class="overlay">
+                  <span class="mb-2">Material Apps</span>
+                  <div class="tech-logo d-flex">
+                    <img src="../assets/images/php.png" alt="" />
+                    <img src="../assets/images/javascript-black-white.png" alt="" />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -180,7 +233,10 @@ onMounted(() => {
     duration: 1,
     scrollTrigger: {
       trigger: '.hero-container',
-      start: 'top 80%',
+      start: 'top 75%',
+      end: 'top 25%',
+      toggleActions: 'play reverse play reverse',
+      // scrub: true,
     },
   })
 
@@ -191,7 +247,24 @@ onMounted(() => {
     delay: 0.2,
     scrollTrigger: {
       trigger: '.hero-container',
-      start: 'top 80%',
+      start: 'top 75%',
+      end: 'top 25%',
+      toggleActions: 'play none none reverse',
+      // scrub: true,
+    },
+  })
+
+  gsap.from('#typewriter', {
+    opacity: 0,
+    y: -50,
+    duration: 1,
+    delay: 0.3,
+    scrollTrigger: {
+      trigger: '.hero-container',
+      start: 'top 75%',
+      end: 'top 25%',
+      toggleActions: 'play none none reverse',
+      // scrub: true,
     },
   })
 
@@ -202,39 +275,71 @@ onMounted(() => {
     scrollTrigger: {
       trigger: '.section-header',
       start: 'top 90%',
+      end: 'top 50%',
+      toggleActions: 'play none none reverse',
+      // scrub: true,
     },
   })
 
-  gsap.from('.section-container', {
+  gsap.from('.section-description-1', {
     opacity: 0,
-    scale: 0.8,
+    scale: 0.5,
     duration: 1,
     scrollTrigger: {
-      trigger: '.section-container',
+      trigger: '.section-description-1',
       start: 'top 90%',
+      end: 'top 50%',
+      toggleActions: 'play none none reverse',
+      // scrub: true,
     },
   })
 
-  gsap.from('.skill-header', {
+  gsap.from('.section-description-2', {
     opacity: 0,
-    smoothOrigin: true,
-    y: -50,
+    scale: 0.5,
     duration: 1,
     scrollTrigger: {
-      trigger: '.skill-header',
-      start: 'top 95%',
+      trigger: '.section-description-2',
+      start: 'top 90%',
+      end: 'top 50%',
+      toggleActions: 'play none none reverse',
+      // scrub: true,
     },
   })
 
-  gsap.from('.skill-item-container', {
-    opacity: 0,
-    scale: 0.8,
-    duration: 1,
-    smoothOrigin: true,
-    scrollTrigger: {
-      trigger: '.skill-item-container',
-      start: 'top 95%',
-    },
+  gsap.utils.toArray('.skill-item').forEach((item, index) => {
+    gsap.from(item, {
+      opacity: 0,
+      scale: 0.5,
+      duration: 0.8,
+      delay: index * 0.2,
+      scrollTrigger: {
+        trigger: item,
+        start: 'top 95%',
+        end: 'top 75%%',
+        toggleActions: 'play none play reverse',
+        // scrub: true,
+      },
+      onComplete: () => {
+        document.querySelector('.skill-item').style.pointerEvents = 'auto'
+      }
+    })
+  })
+
+  gsap.utils.toArray('.card').forEach((item, index) => {
+    gsap.from(item, {
+      opacity: 0,
+      scale: 0.5,
+      duration: 1,
+      delay: index * 0.2,
+      scrollTrigger: {
+        trigger: item,
+        start: 'top 90%',
+        end: 'top 25%',
+        toggleActions: 'play none none reverse',
+        // scrub: true,
+      },
+    })
   })
 
   const mouseMoveHandler = (e) => {
@@ -278,19 +383,20 @@ onMounted(() => {
 
 <style scoped>
 .home {
-  padding-top: calc(var(--navbar-height, 60px) + 1rem);
+  padding-top: calc(var(--navbar-height, 30px) + 1rem);
   min-height: 100vh;
   padding-bottom: 4rem;
 }
 
 .hero-container {
   overflow: hidden;
-  padding: 1rem 6%;
+  width: 100%;
+  padding: 1rem 6.6%;
   margin-top: 1.5rem;
 }
 
 .hero-outter {
-  padding: 3.5rem;
+  padding: 2rem 5% 5rem 5%;
   display: flex;
   align-items: center;
   border-bottom: 1px solid black;
@@ -399,12 +505,13 @@ onMounted(() => {
 .section-description-1 {
   text-align: justify;
   font-size: 15px;
-  border-right: 1px solid black;
+  border-right: 0.1px solid black;
   padding-right: 1rem;
 }
 
 .section-description-2 {
   text-align: justify;
+  border-left: 0.1px solid black;
   font-size: 15px;
   padding-left: 1rem;
 }
@@ -517,6 +624,8 @@ onMounted(() => {
   width: 950px;
   justify-content: center;
   overflow: hidden;
+  padding-bottom: 5rem;
+  transition: all 0.3s ease;
 }
 
 .skill-item-container {
@@ -538,7 +647,6 @@ onMounted(() => {
   width: 200px;
   height: 240px;
   border-radius: 10px;
-  overflow: hidden;
   padding: 2rem;
   gap: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
@@ -546,12 +654,12 @@ onMounted(() => {
 }
 
 .skill-item:nth-child(odd):hover {
-  transform: perspective(500px) rotateY(20deg) rotateX(10deg);
+  transform: perspective(500px) rotateY(20deg) rotateX(10deg) !important;
   cursor: pointer;
 }
 
 .skill-item:nth-child(even):hover {
-  transform: perspective(500px) rotateY(-20deg) rotateX(10deg);
+  transform: perspective(500px) rotateY(-20deg) rotateX(10deg) !important;
   cursor: pointer;
 }
 
@@ -561,9 +669,99 @@ onMounted(() => {
   object-fit: contain;
 }
 
+.outer-project-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 0.8rem 5% 5rem 5%;
+  border-bottom: 1px solid black;
+}
+
+.project-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  width: 100%;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.project-item-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 1.5rem;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+.card {
+  border-radius: 1rem;
+}
+
+.card-image {
+  width: 510px;
+  height: 378px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.card-image .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+}
+
+.card:hover .overlay {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.card:hover .card-image img,
+.card:hover .card-material-image img {
+  transform: scale(1.05);
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.tech-logo img {
+  max-width: 60px;
+  padding: 0.6rem;
+}
+
 @media (max-width: 768px) {
   .home {
-    padding-top: 10px;
+    padding: 10px 0 10px 0;
     min-height: 100vh;
   }
 
@@ -571,19 +769,20 @@ onMounted(() => {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.5rem 4%;
-    width: 400px;
-    gap: 2rem;
+    padding: 2rem 4%;
+    width: 100%;
+    gap: 1rem;
   }
 
   .hero-outter {
     display: flex;
     flex-direction: column;
-    padding: 0.7rem;
+    padding: 0;
+    margin: 0 auto;
     border-bottom: 2px solid black;
     width: 100%;
     align-items: center;
-    gap: 3rem;
+    gap: 1rem;
   }
 
   .image-container {
@@ -663,12 +862,6 @@ onMounted(() => {
     padding: 0.5rem 4%;
   }
 
-  .skill-header {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-  }
-
   .outer-skill-container {
     display: flex;
     justify-content: center;
@@ -684,11 +877,12 @@ onMounted(() => {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    padding: 0.5rem 2% 5rem 2%;
   }
 
   .skill-item-container {
     text-align: center;
-    width: 400px;
+    width: 105vw;
     padding: 2rem;
     gap: 1.5rem;
     font-weight: bold;
@@ -701,9 +895,62 @@ onMounted(() => {
     height: 105px;
   }
 
+  .skill-item:nth-child(odd):hover {
+    transform: perspective(500px) rotateY(20deg) rotateX(10deg) !important;
+    cursor: pointer;
+  }
+
+  .skill-item:nth-child(even):hover {
+    transform: perspective(500px) rotateY(-20deg) rotateX(10deg) !important;
+    cursor: pointer;
+  }
+
   .skill-item img {
     width: 40px;
     height: 40px;
+  }
+
+  #project {
+    padding: 0.5rem 4%;
+  }
+
+  .project-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 2px solid black;
+    padding: 0.5rem 2% 5rem 2%;
+  }
+
+  .project-item-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+
+  .card {
+    border-radius: 1rem;
+  }
+
+  .card-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 1rem;
+  }
+
+  .tech-logo img {
+    max-width: 50px;
+    padding: 7px;
+    margin: 0;
   }
 }
 </style>
