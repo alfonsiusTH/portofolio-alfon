@@ -44,7 +44,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup async>
 import gsap from 'gsap'
 import { onMounted, ref } from 'vue'
 

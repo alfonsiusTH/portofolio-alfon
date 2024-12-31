@@ -4,7 +4,7 @@
     <div class="hero-container">
       <div class="hero-outter">
         <div class="image-container" ref="imageContainer">
-          <img src="../assets/images/hero.png" alt="Alfonsius Tolan Hera" class="hero-image" />
+          <img src="../assets/images/hero.png" loading="lazy" alt="Alfonsius Tolan Hera" class="hero-image" />
           <span></span>
         </div>
         <div class="hero-text">
@@ -100,27 +100,27 @@
           </div>
           <div class="skill-item-container">
             <div class="skill-item" ref="skillItem">
-              <img src="../assets/images/html.png" alt="html" />
+              <img src="../assets/images/html.png" loading="lazy" alt="html" />
               <p>HTML</p>
             </div>
             <div class="skill-item" ref="skillItem1">
-              <img src="../assets/images/css.jpg" alt="css" />
+              <img src="../assets/images/css.jpg" loading="lazy" alt="css" />
               <p>CSS</p>
             </div>
             <div class="skill-item" ref="skillItem2">
-              <img src="../assets/images/javascript.jpg" alt="javascript" />
+              <img src="../assets/images/javascript.jpg" loading="lazy" alt="javascript" />
               <p>JavaScript</p>
             </div>
             <div class="skill-item" ref="skillItem3">
-              <img src="../assets/images/github.png" alt="git" />
+              <img src="../assets/images/github.png" loading="lazy" alt="git" />
               <p>Github</p>
             </div>
             <div class="skill-item" ref="skillItem4">
-              <img src="../assets/images/vuejs.png" alt="git" />
+              <img src="../assets/images/vuejs.png" loading="lazy" alt="git" />
               <p>Vue Js</p>
             </div>
             <div class="skill-item" ref="skillItem5">
-              <img src="../assets/images/bootstrap.png" alt="git" />
+              <img src="../assets/images/bootstrap.png" loading="lazy" alt="git" />
               <p>Bootstrap</p>
             </div>
           </div>
@@ -140,8 +140,8 @@
                 <div class="overlay">
                   <span class="mb-2">Monitoring Apps - Frontend</span>
                   <div class="tech-logo d-flex gap-2">
-                    <img src="../assets/images/vuejs-black-white.png" alt="" />
-                    <img src="../assets/images/bootstrap-black-white.png" alt="" />
+                    <img src="../assets/images/vuejs-black-white.png" loading="lazy" alt="" />
+                    <img src="../assets/images/bootstrap-black-white.png" loading="lazy" alt="" />
                   </div>
                 </div>
               </div>
@@ -152,21 +152,21 @@
                 <div class="overlay">
                   <span class="mb-2">Article Apps</span>
                   <div class="tech-logo d-flex">
-                    <img src="../assets/images/vuejs-black-white.png" alt="" />
-                    <img src="../assets/images/bootstrap-black-white.png" alt="" />
-                    <img src="../assets/images/laravel.png" alt="" />
+                    <img src="../assets/images/vuejs-black-white.png" loading="lazy" alt="" />
+                    <img src="../assets/images/bootstrap-black-white.png" loading="lazy" alt="" />
+                    <img src="../assets/images/laravel.png" loading="lazy" alt="" />
                   </div>
                 </div>
               </div>
             </div>
             <div class="card" ref="card3">
               <div class="card-image">
-                <img src="../assets/images/Material.png" alt="Material Apps" />
+                <img src="../assets/images/Material.png" loading="lazy" alt="Material Apps" />
                 <div class="overlay">
                   <span class="mb-2">Material Apps</span>
                   <div class="tech-logo d-flex">
-                    <img src="../assets/images/php.png" alt="" />
-                    <img src="../assets/images/javascript-black-white.png" alt="" />
+                    <img src="../assets/images/php.png" loading="lazy" alt="" />
+                    <img src="../assets/images/javascript-black-white.png" loading="lazy" alt="" />
                   </div>
                 </div>
               </div>
@@ -178,7 +178,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup async>
 // Import
 import NavigationBar from '@/components/NavigationBar.vue'
 import { onMounted, ref } from 'vue'
