@@ -137,6 +137,7 @@ onMounted(() => {
 <style scoped>
 .navbar {
   background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(3px);
   padding: 1rem 2%;
   position: fixed;
   top: 0;
