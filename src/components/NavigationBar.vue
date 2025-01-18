@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar w-100">
     <div class="navbar-container" ref="navbarContainer">
-      <a href="#" class="logo navbar-brand" ref="navbarBrand">Alfonsius Tolan Hera</a>
+      <a href="#" class="logo navbar-brand" ref="navbarBrand">Alfongg</a>
       <div class="desktop-menu">
         <ul class="navbar-menu">
           <li v-for="item in menu" class="nav-item" :key="item.name">
@@ -136,8 +136,8 @@ onMounted(() => {
 
 <style scoped>
 .navbar {
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(3px);
+  background: transparent;
+  backdrop-filter: blur(7px);
   padding: 1rem 2%;
   position: fixed;
   top: 0;
@@ -153,8 +153,9 @@ onMounted(() => {
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 1.3em;
+  font-weight: 600;
+  margin-left: 10px;
   color: black;
   text-decoration: none;
 }
