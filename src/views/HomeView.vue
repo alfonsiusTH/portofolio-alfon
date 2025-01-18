@@ -336,7 +336,7 @@ onMounted(() => {
     duration: 1,
     scrollTrigger: {
       trigger: '.section-header',
-      start: 'top 80%',
+      start: 'top 90%',
       end: 'top 50%',
       toggleActions: 'play none none reverse',
       // scrub: true,
