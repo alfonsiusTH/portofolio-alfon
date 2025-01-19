@@ -42,6 +42,8 @@
               </p>
             </div>
           </div>
+          <span class="vertical-line" style="width: 2px; height: auto; background-color: black">
+          </span>
           <div class="description-wrapper">
             <div class="section-description-2" ref="description2">
               <strong>PT. Wellmagic Media Digital</strong>
@@ -217,7 +219,10 @@
                     ></path>
                   </svg>
                 </a>
-                <a href="https://www.linkedin.com/in/alfonsius-tolan-hera-230345313/" target="_blank">
+                <a
+                  href="https://www.linkedin.com/in/alfonsius-tolan-hera-230345313/"
+                  target="_blank"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 16 16"
@@ -280,7 +285,7 @@ onMounted(() => {
     backSpeed: 30,
     loop: true,
     cursorChar: '|',
-    onComplete: (self) => {
+    onComplete: () => {
       const cursor = document.querySelector('.typed-cursor')
       if (cursor) {
         cursor.style.display = 'inline-block'
@@ -289,96 +294,107 @@ onMounted(() => {
   }
   const typed = new Typed('#typed-text', role)
 
-  gsap.from('.hero-text h4', {
-    opacity: 0,
-    y: -50,
-    duration: 1,
+  const heroTimeline = gsap.timeline({ defaults: { ease: 'power3.out' } })
+
+  heroTimeline
+    .from('.hero-text h4', {
+      opacity: 0,
+      y: 30,
+      ease: 'power2.out',
+      duration: 1,
+    })
+    .from(
+      '#typewriter',
+      {
+        opacity: 0,
+        y: 20,
+        ease: 'power2.out',
+        duration: 0.8,
+      },
+      '-=0.5',
+    )
+    .from(
+      '.hero-text p',
+      {
+        opacity: 0,
+        ease: 'power2.out',
+        y: 20,
+        duration: 0.8,
+      },
+      '-=0.3',
+    )
+    .from(
+      '.image-container',
+      {
+        opacity: 0,
+        scale: 0.8,
+        ease: 'power3.out',
+        duration: 0.8,
+      },
+      '-=0.8',
+    )
+
+  gsap.utils.toArray('.section-header').forEach((header) => {
+    gsap.from(header, {
+      opacity: 0,
+      y: 30,
+      duration: 0.8,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: header,
+        start: 'top 80%',
+        end: 'top 50%',
+        toggleActions: 'play none none reverse',
+      },
+    })
+  })
+
+  const aboutTimeline = gsap.timeline({
     scrollTrigger: {
-      trigger: '.hero-container',
-      start: 'top 75%',
-      end: 'top 25%',
-      toggleActions: 'play reverse play reverse',
-      // scrub: true,
+      trigger: '.section-container',
+      start: 'top 70%',
+      end: 'bottom 20%',
+      toggleActions: 'play none none reverse',
     },
   })
 
-  gsap.from('.hero-text p', {
-    opacity: 0,
-    x: -50,
-    duration: 1,
-    delay: 0.2,
-    scrollTrigger: {
-      trigger: '.hero-container',
-      start: 'top 75%',
-      end: 'top 25%',
-      toggleActions: 'play none none reverse',
-      // scrub: true,
-    },
-  })
-
-  gsap.from('#typewriter', {
-    opacity: 0,
-    y: -50,
-    duration: 1,
-    delay: 0.3,
-    scrollTrigger: {
-      trigger: '.hero-container',
-      start: 'top 75%',
-      end: 'top 25%',
-      toggleActions: 'play none none reverse',
-      // scrub: true,
-    },
-  })
-
-  gsap.from('.section-header', {
-    opacity: 0,
-    y: -50,
-    duration: 1,
-    scrollTrigger: {
-      trigger: '.section-header',
-      start: 'top 90%',
-      end: 'top 50%',
-      toggleActions: 'play none none reverse',
-      // scrub: true,
-    },
-  })
-
-  gsap.from('.section-description-1', {
-    opacity: 0,
-    scale: 0.5,
-    duration: 1,
-    scrollTrigger: {
-      trigger: '.section-description-1',
-      start: 'top 80%',
-      end: 'top 50%',
-      toggleActions: 'play none none reverse',
-      // scrub: true,
-    },
-  })
-
-  gsap.from('.section-description-2', {
-    opacity: 0,
-    scale: 0.5,
-    duration: 1,
-    scrollTrigger: {
-      trigger: '.section-description-2',
-      start: 'top 80%',
-      end: 'top 50%',
-      toggleActions: 'play none none reverse',
-      // scrub: true,
-    },
-  })
+  aboutTimeline
+    .from('.section-description-1', {
+      opacity: 0,
+      x: -30,
+      duration: 0.8,
+    })
+    .from(
+      '.vertical-line',
+      {
+        opacity: 0,
+        scaleY: 0,
+        duration: 0.6,
+        transformOrigin: 'top',
+      },
+      '-=0.4',
+    )
+    .from(
+      '.section-description-2',
+      {
+        opacity: 0,
+        x: 30,
+        duration: 0.8,
+      },
+      '-=0.6',
+    )
 
   gsap.utils.toArray('.skill-item').forEach((item, index) => {
     gsap.from(item, {
       opacity: 0,
-      scale: 0.5,
-      duration: 0.8,
-      delay: index * 0.2,
+      y: 50,
+      duration: 0.7,
+      ease: 'power2.out',
+      delay: index * 0.3,
       scrollTrigger: {
         trigger: item,
-        start: 'top 95%',
-        end: 'top 75%',
+        start: 'top 90%',
+        end: 'top 50%',
         toggleActions: 'play none play reverse',
         // scrub: true,
       },
@@ -388,34 +404,55 @@ onMounted(() => {
     })
   })
 
-  gsap.utils.toArray('.card').forEach((item, index) => {
-    gsap.from(item, {
+  gsap.utils.toArray('.card').forEach((card, index) => {
+    gsap.from(card, {
       opacity: 0,
-      scale: 0.5,
-      duration: 1,
+      y: 50,
+      duration: 0.8,
+      ease: 'power2.out',
       delay: index * 0.2,
       scrollTrigger: {
-        trigger: item,
-        start: 'top 90%',
-        end: 'top 25%',
+        trigger: card,
+        start: 'top 85%',
+        end: 'top 50%',
         toggleActions: 'play none none reverse',
-        // scrub: true,
       },
     })
   })
 
-  gsap.from('.end-container', {
-    opacity: 0,
-    y: -50,
-    duration: 1,
+  const endTimeline = gsap.timeline({
     scrollTrigger: {
       trigger: '.end-container',
-      start: 'top 90%',
+      start: 'top 80%',
       end: 'top 50%',
       toggleActions: 'play none none reverse',
-      // scrub: true,
     },
   })
+
+  endTimeline
+    .from('.end-content p', {
+      opacity: 0,
+      y: 20,
+      duration: 0.6,
+    })
+    .from(
+      '.end-content span',
+      {
+        opacity: 0,
+        y: 20,
+        duration: 0.6,
+      },
+      '-=0.3',
+    )
+    .from(
+      '.contact-container',
+      {
+        opacity: 0,
+        y: 20,
+        duration: 0.6,
+      },
+      '-=0.3',
+    )
 
   const mouseMoveHandler = (e) => {
     const { clientX, clientY } = e
@@ -424,26 +461,26 @@ onMounted(() => {
     const centerX = bounds.left + bounds.width / 2
     const centerY = bounds.top + bounds.height / 2
 
-    const offsetX = (clientX - centerX) / 10
-    const offsetY = (clientY - centerY) / 10
+    const offsetX = (clientX - centerX) / 15
+    const offsetY = (clientY - centerY) / 15
 
     const distance = Math.sqrt(Math.pow(clientX - centerX, 2) + Math.pow(clientY - centerY, 2))
 
-    if (distance > 450) {
+    if (distance > 350) {
       document.removeEventListener('mousemove', mouseMoveHandler)
       gsap.to(container, {
         x: 0,
         y: 0,
-        ease: 'power3.out',
-        duration: 0.5,
+        ease: 'elastic.out(1, 0.3)',
+        duration: 1,
       })
       document.addEventListener('mousemove', mouseMoveHandler)
     } else {
       gsap.to(container, {
         x: offsetX,
         y: offsetY,
-        ease: 'power3.out',
-        duration: 0.3,
+        ease: 'power2.out',
+        duration: 0.8,
       })
     }
   }
@@ -472,9 +509,9 @@ onMounted(() => {
 
 .hero-outter {
   padding: 2rem 5% 5rem 5%;
+  border-bottom: 1px solid black;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid black;
   gap: 5rem;
 }
 
@@ -580,13 +617,13 @@ onMounted(() => {
 .section-description-1 {
   text-align: justify;
   font-size: 15px;
-  border-right: 0.1px solid black;
+  /* border-right: 0.1px solid black; */
   padding-right: 1rem;
 }
 
 .section-description-2 {
   text-align: justify;
-  border-left: 0.1px solid black;
+  /* border-left: 0.1px solid black; */
   font-size: 15px;
   padding-left: 1rem;
 }
@@ -876,7 +913,6 @@ onMounted(() => {
   font-size: 1em;
   color: rgb(94, 93, 93);
   text-decoration: none;
-
 }
 
 .contact-image {
@@ -927,6 +963,7 @@ onMounted(() => {
 
   .hero-text {
     text-align: center;
+    padding-top: 1rem;
     padding-bottom: 1rem;
   }
 
