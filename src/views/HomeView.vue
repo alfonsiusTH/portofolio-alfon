@@ -337,8 +337,8 @@ onMounted(() => {
   gsap.utils.toArray('.section-header').forEach((header) => {
     gsap.from(header, {
       opacity: 0,
-      y: 30,
-      duration: 0.8,
+      y: 40,
+      duration: 0.6,
       ease: 'power2.out',
       scrollTrigger: {
         trigger: header,
@@ -388,14 +388,14 @@ onMounted(() => {
     gsap.from(item, {
       opacity: 0,
       y: 50,
-      duration: 0.7,
+      duration: 0.8,
       ease: 'power2.out',
-      delay: index * 0.3,
+      delay: index * 0.2,
       scrollTrigger: {
         trigger: item,
-        start: 'top 90%',
+        start: 'top 85%',
         end: 'top 50%',
-        toggleActions: 'play none play reverse',
+        toggleActions: 'play none none reverse',
         // scrub: true,
       },
       onComplete: () => {
