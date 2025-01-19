@@ -5,7 +5,7 @@
       <div class="hero-outter">
         <div class="image-container" ref="imageContainer">
           <img
-            src="../assets/images/hero.png"
+            src="../assets/webp/hero.webp"
             loading="lazy"
             alt="Alfonsius Tolan Hera"
             class="hero-image"
@@ -107,27 +107,27 @@
           </div>
           <div class="skill-item-container">
             <div class="skill-item" ref="skillItem">
-              <img src="../assets/images/html.png" loading="lazy" alt="html" />
+              <img src="../assets/webp/html.webp" loading="lazy" alt="html" />
               <p>HTML</p>
             </div>
             <div class="skill-item" ref="skillItem1">
-              <img src="../assets/images/css.jpg" loading="lazy" alt="css" />
+              <img src="../assets/webp/css.webp" loading="lazy" alt="css" />
               <p>CSS</p>
             </div>
             <div class="skill-item" ref="skillItem2">
-              <img src="../assets/images/javascript.jpg" loading="lazy" alt="javascript" />
+              <img src="../assets/webp/javascript.webp" loading="lazy" alt="javascript" />
               <p>JavaScript</p>
             </div>
             <div class="skill-item" ref="skillItem3">
-              <img src="../assets/images/github.png" loading="lazy" alt="git" />
+              <img src="../assets/webp/github.webp" loading="lazy" alt="github" />
               <p>Github</p>
             </div>
             <div class="skill-item" ref="skillItem4">
-              <img src="../assets/images/vuejs.png" loading="lazy" alt="git" />
+              <img src="../assets/webp/vuejs.webp" loading="lazy" alt="vue" />
               <p>Vue Js</p>
             </div>
             <div class="skill-item" ref="skillItem5">
-              <img src="../assets/images/bootstrap.png" loading="lazy" alt="git" />
+              <img src="../assets/webp/bootstrap.webp" loading="lazy" alt="bootstrap" />
               <p>Bootstrap</p>
             </div>
           </div>
