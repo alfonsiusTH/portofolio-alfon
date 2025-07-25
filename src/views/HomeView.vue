@@ -644,7 +644,7 @@ onMounted(() => {
   width: 100%;
   max-width: 190px;
   height: 100%;
-  border-radius: 15px;
+  border-radius: 8px;
   max-height: 200px;
   padding: 1rem;
   margin: 10px auto;
@@ -698,7 +698,7 @@ onMounted(() => {
   inset: 5px;
   background: white;
   color: #00589b;
-  border-radius: 10px;
+  border-radius: 6px;
   z-index: 1;
   transition: all 0.4s ease-in-out;
 }
